@@ -1,0 +1,199 @@
+@use "./mediaqueries";
+
+$primary-color: #7daba7;
+$secondary-color: #564973;
+$tertiary-color: #b2818b;
+$background-color: white;
+$text-color: black;
+$font-type: "Poppins", sans-serif;
+$font-size-base: 14px;
+
+
+body {
+  font-family: $font-type;
+  font-size: $font-size-base;
+  color: $text-color;
+  margin: 0;
+  padding: 10px;
+  padding-top: 30px;
+}
+
+header {
+  @include mediaqueries.phone {
+    display: none;
+  }
+  @include mediaqueries.desktop {
+    // text-align: center;
+    background-color: $primary-color;
+    padding: 20px;
+    font-weight: bold;
+
+    nav {
+      display: flex;
+      //   justify-content: space-between;
+      justify-content: right;
+      padding: 10px;
+
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        a:visited {
+          color: $secondary-color;
+        }
+        a:link {
+          color: $text-color;
+        }
+        a:hover {
+          cursor: pointer;
+        }
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+    button {
+      background-color: $background-color;
+      cursor: pointer;
+      border: none;
+      padding: 10px 20px;
+      text-decoration: none;
+    }
+  }
+}
+
+.home {
+  @include mediaqueries.phone {
+    h1 {
+      font-size: 50px;
+      text-align: center;
+      padding-right: 30%;
+      padding-left: 10%;
+    }
+    .home__image {
+      display: none;
+    }
+    // text-align: center;
+    // font-size: 10px;
+  }
+  @include mediaqueries.desktop {
+  }
+}
+
+.about {
+  // text-align: center; // Center the text in about section
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+
+  @include mediaqueries.phone {
+    h2 {
+      text-align: center;
+      // display: flex;
+      // flex-direction: column;
+      // align-items: center;
+    }
+    img {
+      display: block;
+      margin: 0 auto; // Center image horizontally
+      width: 80%; // Adjust image width to match the design
+    }
+  }
+  @include mediaqueries.desktop {
+  }
+}
+
+.skills {
+  //     .text {
+  //     text-align: center;
+  //   }
+
+  @include mediaqueries.phone {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+
+    p {
+      align-items: center;
+      float: left;
+      width: 40%;
+      margin-bottom: 10px;
+    }
+    img {
+      width: 50px;
+      height: 50px;
+      float: left;
+      margin-right: 10px;
+    }
+  }
+
+  @include mediaqueries.desktop {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    img {
+      width: 80%;
+    }
+  }
+}
+
+.projects {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // h3 {
+  //   text-align: center;
+  // }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 80%; // Adjust as needed
+  }
+  p {
+    margin-bottom: 5px; // Reduce spacing between text elements
+    line-height: 1.2; // Make text closer together
+  }
+  //   border: 1px solid $text-color;
+  //   padding: 20px;
+  //   margin: 10px;
+  //   text-align: center;
+  //     h3 {
+
+  //     }
+
+  //   @include mediaqueries.phone {
+  //     display: flex;
+  //     flex-direction: row;
+  //     justify-content: space-around;
+  //   }
+  //   @include mediaqueries.desktop {
+  //   }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+
+  text-align: center;
+  background-color: $secondary-color;
+  padding: 20px;
+  h4 {
+    a:visited {
+      color: $secondary-color;
+    }
+    a:link {
+      color: $background-color;
+    }
+    a:hover {
+      cursor: pointer;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}
