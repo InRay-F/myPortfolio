@@ -8,14 +8,26 @@ $text-color: black;
 $font-type: "Poppins", sans-serif;
 $font-size-base: 14px;
 
-
 body {
   font-family: $font-type;
   font-size: $font-size-base;
   color: $text-color;
   margin: 0;
-  padding: 10px;
+  padding: 20px;
   padding-top: 30px;
+  @include mediaqueries.phone {
+    h2 {
+      text-align: center;
+      font-size: 23px;
+    }
+    img {
+      display: block;
+      margin: auto;
+    }
+    h4 {
+      font-size: 30px;
+    }
+  }
 }
 
 header {
@@ -23,21 +35,20 @@ header {
     display: none;
   }
   @include mediaqueries.desktop {
-    // text-align: center;
     background-color: $primary-color;
     padding: 20px;
     font-weight: bold;
 
     nav {
       display: flex;
-      //   justify-content: space-between;
-      justify-content: right;
-      padding: 10px;
+      justify-content: space-between;
+      padding: 10px 30px;
 
       ul {
         list-style: none;
         display: flex;
         gap: 15px;
+        padding-left: 60%;
         a:visited {
           color: $secondary-color;
         }
@@ -53,11 +64,15 @@ header {
       }
     }
     button {
-      background-color: $background-color;
+      background-color: $primary-color;
       cursor: pointer;
-      border: none;
+      border: solid 1px black;
       padding: 10px 20px;
-      text-decoration: none;
+      border-radius: 10px;
+      margin-left: 4%;
+      a {
+        text-decoration: none;
+      }
     }
   }
 }
@@ -66,48 +81,61 @@ header {
   @include mediaqueries.phone {
     h1 {
       font-size: 50px;
-      text-align: center;
-      padding-right: 30%;
-      padding-left: 10%;
+      text-align: left;
+      padding: right 17px;
+      padding-left: 23%;
     }
     .home__image {
       display: none;
     }
-    // text-align: center;
-    // font-size: 10px;
   }
   @include mediaqueries.desktop {
+    padding-top: 10%;
+    div {
+      display: flex;
+      justify-content: center;
+    }
+
+    h3 {
+      font-size: 25px;
+      padding-left: 70px;
+    }
+
+    h1 {
+      font-size: 50px;
+      padding-left: 70px;
+    }
+    img {
+      padding-right: 10%;
+      padding-left: 10%;
+    }
   }
 }
 
 .about {
-  // text-align: center; // Center the text in about section
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-
-  @include mediaqueries.phone {
-    h2 {
-      text-align: center;
-      // display: flex;
-      // flex-direction: column;
-      // align-items: center;
-    }
-    img {
-      display: block;
-      margin: 0 auto; // Center image horizontally
-      width: 80%; // Adjust image width to match the design
-    }
-  }
   @include mediaqueries.desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 20px;
+
+    img {
+      width: 250px;
+      height: auto;
+    }
+
+    .about h2 {
+      margin: 0;
+    }
+
+    .about p {
+      margin-top: 10px;
+    }
   }
 }
 
 .skills {
-  //     .text {
-  //     text-align: center;
-  //   }
-
   @include mediaqueries.phone {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -133,7 +161,7 @@ header {
     gap: 15px;
 
     img {
-      width: 80%;
+      width: 100%;
     }
   }
 }
@@ -144,56 +172,104 @@ header {
   flex-direction: column;
   align-items: center;
 
-  // h3 {
-  //   text-align: center;
-  // }
-
   img {
     display: block;
     margin: 0 auto;
-    width: 80%; // Adjust as needed
+    width: 80%;
   }
   p {
-    margin-bottom: 5px; // Reduce spacing between text elements
-    line-height: 1.2; // Make text closer together
+    margin-bottom: 5px;
+    line-height: 1.2;
   }
-  //   border: 1px solid $text-color;
-  //   padding: 20px;
-  //   margin: 10px;
-  //   text-align: center;
-  //     h3 {
 
-  //     }
+  h3,
+  h4 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 
-  //   @include mediaqueries.phone {
-  //     display: flex;
-  //     flex-direction: row;
-  //     justify-content: space-around;
-  //   }
-  //   @include mediaqueries.desktop {
-  //   }
+  @include mediaqueries.desktop {
+    .clientProjects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+
+      div {
+        background-color: #f9f9f9;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+
+      button {
+        margin: 5px;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        background-color: #7daba7;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+    }
+  }
 }
 
 footer {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-
-  text-align: center;
-  background-color: $secondary-color;
+  align-items: center;
   padding: 20px;
-  h4 {
-    a:visited {
-      color: $secondary-color;
-    }
-    a:link {
-      color: $background-color;
-    }
-    a:hover {
-      cursor: pointer;
-    }
+  background-color: $secondary-color;
+  min-height: 25vh;
+
+  h5 {
+    margin: 0;
     a {
       text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      &:visited {
+        color: $background-color;
+      }
+      &:link {
+        color: $background-color;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 15px;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  @include mediaqueries.phone {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    .social-icons {
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    h5 {
+      text-align: center;
+      margin-top: 10px;
     }
   }
 }

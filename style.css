@@ -14,8 +14,21 @@ body {
   font-size: 14px;
   color: black;
   margin: 0;
-  padding: 10px;
+  padding: 20px;
   padding-top: 30px;
+}
+@media only screen and (max-width: 576px) {
+  body h2 {
+    text-align: center;
+    font-size: 23px;
+  }
+  body img {
+    display: block;
+    margin: auto;
+  }
+  body h4 {
+    font-size: 30px;
+  }
 }
 
 @media only screen and (max-width: 576px) {
@@ -31,13 +44,14 @@ body {
   }
   header nav {
     display: flex;
-    justify-content: right;
-    padding: 10px;
+    justify-content: space-between;
+    padding: 10px 30px;
   }
   header nav ul {
     list-style: none;
     display: flex;
     gap: 15px;
+    padding-left: 60%;
   }
   header nav ul a:visited {
     color: #564973;
@@ -52,10 +66,14 @@ body {
     text-decoration: none;
   }
   header button {
-    background-color: white;
+    background-color: #7daba7;
     cursor: pointer;
-    border: none;
+    border: solid 1px black;
     padding: 10px 20px;
+    border-radius: 10px;
+    margin-left: 4%;
+  }
+  header button a {
     text-decoration: none;
   }
 }
@@ -63,24 +81,56 @@ body {
 @media only screen and (max-width: 576px) {
   .home h1 {
     font-size: 50px;
-    text-align: center;
-    padding-right: 30%;
-    padding-left: 10%;
+    text-align: left;
+    padding: right 17px;
+    padding-left: 23%;
   }
   .home .home__image {
     display: none;
   }
 }
-@media only screen and (max-width: 576px) {
-  .about h2 {
-    text-align: center;
+@media only screen and (min-width: 1024px) {
+  .home {
+    padding-top: 10%;
   }
-  .about img {
-    display: block;
-    margin: 0 auto;
-    width: 80%;
+  .home div {
+    display: flex;
+    justify-content: center;
+  }
+  .home h3 {
+    font-size: 25px;
+    padding-left: 70px;
+  }
+  .home h1 {
+    font-size: 50px;
+    padding-left: 70px;
+  }
+  .home img {
+    padding-right: 10%;
+    padding-left: 10%;
   }
 }
+
+@media only screen and (min-width: 1024px) {
+  .about {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 20px;
+  }
+  .about img {
+    width: 250px;
+    height: auto;
+  }
+  .about .about h2 {
+    margin: 0;
+  }
+  .about .about p {
+    margin-top: 10px;
+  }
+}
+
 @media only screen and (max-width: 576px) {
   .skills {
     display: grid;
@@ -107,7 +157,7 @@ body {
     gap: 15px;
   }
   .skills img {
-    width: 80%;
+    width: 100%;
   }
 }
 
@@ -126,26 +176,87 @@ body {
   margin-bottom: 5px;
   line-height: 1.2;
 }
+.projects h3,
+.projects h4 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+@media only screen and (min-width: 1024px) {
+  .projects .clientProjects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .projects .clientProjects div {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .projects .clientProjects img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  .projects .clientProjects button {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #7daba7;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+}
 
 footer {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  text-align: center;
-  background-color: #564973;
+  align-items: center;
   padding: 20px;
+  background-color: #564973;
+  min-height: 25vh;
 }
-footer h4 a:visited {
-  color: #564973;
+footer h5 {
+  margin: 0;
 }
-footer h4 a:link {
+footer h5 a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+footer h5 a:visited {
   color: white;
 }
-footer h4 a:hover {
+footer h5 a:link {
+  color: white;
+}
+footer h5 a:hover {
   cursor: pointer;
 }
-footer h4 a {
-  text-decoration: none;
+footer .social-icons {
+  display: flex;
+  gap: 15px;
+}
+footer .social-icons img {
+  width: 40px;
+  height: 40px;
+}
+@media only screen and (max-width: 576px) {
+  footer {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  footer .social-icons {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  footer h5 {
+    text-align: center;
+    margin-top: 10px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
