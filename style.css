@@ -14,7 +14,6 @@ body {
   font-size: 14px;
   color: black;
   margin: 0;
-  padding: 20px;
   padding-top: 30px;
 }
 @media only screen and (max-width: 576px) {
@@ -27,6 +26,16 @@ body {
     margin: auto;
   }
   body h4 {
+    font-size: 30px;
+  }
+  body p {
+    text-align: center;
+    padding: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body h2 {
+    text-align: center;
     font-size: 30px;
   }
 }
@@ -79,11 +88,15 @@ body {
 }
 
 @media only screen and (max-width: 576px) {
+  .home h3 {
+    text-align: center;
+    padding-right: 5%;
+  }
   .home h1 {
     font-size: 50px;
     text-align: left;
-    padding: right 17px;
-    padding-left: 23%;
+    padding-right: 5%;
+    padding-left: 20%;
   }
   .home .home__image {
     display: none;
@@ -111,39 +124,71 @@ body {
   }
 }
 
+.about-title1 {
+  font-size: 30px;
+}
+@media only screen and (min-width: 1024px) {
+  .about-title1 {
+    display: none;
+  }
+}
+
+.about .about-title2 {
+  display: flex;
+}
+@media only screen and (max-width: 576px) {
+  .about .about-title2 {
+    display: none;
+  }
+}
 @media only screen and (min-width: 1024px) {
   .about {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    text-align: left;
     gap: 20px;
+    padding-left: 70px;
+    padding-right: 70px;
+    align-items: center;
   }
   .about img {
-    width: 250px;
-    height: auto;
+    width: auto;
+    height: 500px;
   }
-  .about .about h2 {
-    margin: 0;
+  .about .about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 50px;
   }
-  .about .about p {
-    margin-top: 10px;
+}
+
+.skills h2 {
+  text-align: center;
+  font-size: 30px;
+}
+.skills p {
+  text-align: center;
+}
+@media only screen and (min-width: 1024px) {
+  .skills {
+    padding: 20px;
+    margin: 100px;
   }
 }
 
 @media only screen and (max-width: 576px) {
-  .skills {
+  .technical-skills {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    align-content: center;
+    padding-right: 20px;
   }
-  .skills p {
-    align-items: center;
+  .technical-skills p {
     float: left;
-    width: 40%;
+    width: 80%;
     margin-bottom: 10px;
   }
-  .skills img {
+  .technical-skills img {
     width: 50px;
     height: 50px;
     float: left;
@@ -151,72 +196,77 @@ body {
   }
 }
 @media only screen and (min-width: 1024px) {
-  .skills {
+  .technical-skills {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    text-align: center;
   }
-  .skills img {
-    width: 100%;
+  .technical-skills img {
+    width: 40px;
+    height: 40px;
   }
 }
 
-.projects {
+.projects h2 {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  font-size: 30px;
 }
-.projects img {
-  display: block;
-  margin: 0 auto;
-  width: 80%;
+
+.clientProjects h3,
+.clientProjects h4 {
+  margin: 0;
+  padding: 0;
 }
-.projects p {
-  margin-bottom: 5px;
-  line-height: 1.2;
-}
-.projects h3,
-.projects h4 {
-  margin-bottom: 0;
-  padding-bottom: 0;
+@media only screen and (max-width: 576px) {
+  .clientProjects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .clientProjects img {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    padding-top: 20px;
+  }
+  .clientProjects p {
+    margin-bottom: 5px;
+    line-height: 1.2;
+  }
 }
 @media only screen and (min-width: 1024px) {
-  .projects .clientProjects {
+  .clientProjects {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding-left: 60px;
+    padding-top: 20px;
   }
-  .projects .clientProjects div {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-  }
-  .projects .clientProjects img {
-    width: 100%;
-    height: auto;
+  .clientProjects img {
+    width: 400px;
+    height: 300px;
     border-radius: 5px;
   }
-  .projects .clientProjects button {
-    margin: 5px;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    background-color: #7daba7;
-    color: white;
-    font-weight: bold;
-    border-radius: 5px;
+  .clientProjects p {
+    margin: 0;
+    width: 400px;
   }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px;
 }
 
 footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
   background-color: #564973;
   min-height: 25vh;
+  margin-top: 50px;
 }
 footer h5 {
   margin: 0;
@@ -235,23 +285,34 @@ footer h5 a:link {
 footer h5 a:hover {
   cursor: pointer;
 }
+@media only screen and (min-width: 1024px) {
+  footer h5 {
+    padding-left: 50px;
+  }
+}
 footer .social-icons {
   display: flex;
   gap: 15px;
+  padding-right: 50px;
 }
 footer .social-icons img {
   width: 40px;
   height: 40px;
 }
+@media only screen and (min-width: 1024px) {
+  footer .social-icons {
+    padding-right: 50px;
+  }
+}
 @media only screen and (max-width: 576px) {
   footer {
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
-    text-align: center;
   }
   footer .social-icons {
     justify-content: center;
     margin-bottom: 10px;
+    padding-left: 50px;
   }
   footer h5 {
     text-align: center;
